@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+  <div class="container">
+      <h1>TETHER USDT(TRC-20)</h1>
+    <img src="/Investment /IMG-20250701-WA0033.jpg" alt="QR-code" class="QR-code">
+    <h2 id="copyLink" style="word-wrap: break-word; overflow-wrap: break-word;">
+    TYUBcdDkNetySzodprJq8f243QhNuDzQpr</h2>
+<button onclick="copyH2Link()">Copy </button>
+<ul>Note: Copy the adress above or scan the QR-code to make your payment.After completing your payment click on the done button</ul>
+<a href="confirm.html"<button id="btn1" >DONE</button></a>
+<div id="message" style="
+  display: none;
+  padding: 15px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+  position: absolute;
+">
+  Successful!
+</div>
+</div>
+</body>
+</html>
+<style>
+body{
+  background-color:antiquewhite;
+}
+ul{
+  position: relative;
+  top: 40px;
+  right: 40px;
+  color :white;
+}
+#btn1{
+  background-color: green;
+  height: 50px;
+  width: 200px;
+  position :relative;
+  top :40px;
+  left: 50px;
+  border-radius :40px;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+  .QR-code{
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    position: relative;
+    left: 2px;
+    top: 10px;
+  }
+  .container{
+    background-color: #3C3939;
+    padding: 30px;
+    height: 670px;
+    border-radius :40px;
+  }
+  h2 {
+    border : none;
+    position: relative;
+    top: 40px;
+    background: none;
+    color :white;
+    font-size: 15px;
+    right: 8px;
+    font-style: italic;
+    font-family: Arial;
+  }
+ button{
+   position: relative;
+   top: 30px;
+   right: 9px;
+   background-color: #3C3939;
+   color :white;
+   border-color:white ;
+ }
+ h1{
+   color: antiquewhite;
+ }
+</style>
+<script>
+function copyH2Link() {
+  const text = document.getElementById("copyLink").innerText;
+  navigator.clipboard.writeText(text)
+}
+function showMessageAndRedirect() {
+  // Show the success message
+  const msg = document.getElementById("message");
+  msg.style.display = "block";
+
+  // Redirect after 2 seconds (2000 ms)
+  setTimeout(() => {
+    window.location.href = "Dashboard2.html";  // <-- change this to your target URL
+  }, 2000);
+}
+</script>

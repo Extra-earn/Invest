@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <div class="container">
+    <img src="/Investment /IMG-20250625-WA0203.jpg">
+    <ul>Amount :10 USDT </ul>
+    <ul>Daily Return : 0.5 USDT </ul>
+    <ul>Duration : 40 days </ul>
+    <ul>Total Returns : 20 USDT  </ul>
+    <button id="btn">PURCHASE</button>
+  </div>
+    <div class="container" id="cont1">
+    <img src="/Investment /IMG-20250625-WA0205.jpg">
+    <ul>Amount :30 USDT</ul>
+    <ul>Daily Return : 1 USDT </ul>
+    <ul>Duration : 60 days </ul>
+    <ul>Total Returns : 60 USDT</ul>
+    <button id="btn1">PURCHASE</button>
+  </div>
+    </div>
+    <div class="container" id="cont2">
+    <img src="/Investment /IMG-20250625-WA0206.jpg">
+    <ul>Amount :50 USDT</ul>
+    <ul>Daily Return : 2 USDT</ul>
+    <ul>Duration : 60 days </ul>
+    <ul>Total Returns : 120 USDT</ul>
+    <button id="btn2">PURCHASE</button>
+  </div>
+    </div>
+    <div class="container" id="cont3">
+    <img src="/Investment /IMG-20250625-WA0204.jpg">
+    <ul>Amount :100 USDT</ul>
+    <ul>Daily Return : 4 USDT</ul>
+    <ul>Duration : 60 days </ul>
+    <ul>Total Returns : 240 USDT</ul>
+    <button id="btn3">PURCHASE</button>
+  </div>
+    </div>
+    <div class="container" id="cont4">
+    <img src="/Investment /IMG-20250625-WA0202.jpg">
+    <ul>Amount :150 USDT</ul>
+    <ul>Daily Return : 5 USDT</ul>
+    <ul>Duration : 60 days </ul>
+    <ul>Total Returns : 300 USDT</ul>
+    <button id="btn4">PURCHASE</button>
+  </div>
+    </div>
+    <div class="container" id="cont5">
+    <img src="/Investment /IMG-20250625-WA0207.jpg">
+    <ul>Amount :200 USDT </ul>
+    <ul>Daily Return : 6 USDT</ul>
+    <ul>Duration : 60 days </ul>
+    <ul>Total Returns : 360 USDT</ul>
+    <button id="btn5">PURCHASE</button>
+  </div>
+  <div class="custom-alert" id="customAlert">
+  <div class="alert-box">
+    <p>You can not purchase this product due to your low balance</p>
+    <button onclick="closeAlert()" id="ok">OK</button>
+  </div>
+</div>
+</body>
+
+</html>
+<style>
+  body{
+    background-color:antiquewhite ;
+  }
+  .container {
+    background-color:  #3C3939;
+    padding: 30px;
+    border-radius:10px;
+    width: 300px;
+    height: 230px;
+  }
+  #cont1{
+    background-color:  #3C3939;
+    padding: 30px;
+    border-radius:10px;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    top: 10px;
+  }
+    #cont2{
+    background-color:  #3C3939;
+    padding: 30px;
+    border-radius:10px;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    top: 20px;
+  }
+    #cont3{
+    background-color:  #3C3939;
+    padding: 30px;
+    border-radius:10px;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    top: 30px;
+  }
+    #cont4{
+    background-color:  #3C3939;
+    padding: 30px;
+    border-radius:10px;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    top: 40px;
+  }
+    #cont5{
+    background-color:  #3C3939;
+    padding: 30px;
+    border-radius:10px;
+    width: 300px;
+    height: 230px;
+    position: relative;
+    top: 50px;
+  }
+  img{
+    width: 200px;
+    height: 150px;
+    border-radius:10px;
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+  }
+  ul{
+    color: white;
+    font-family: Helvetica;
+    font-size: 15px;
+    padding: 0px;
+    position: relative;
+    bottom:37px;
+    right: 20px;
+    display: flex;
+    margin-bottom:0px;
+    margin-top: 16px;
+  }
+  #btn{
+    background-color: limegreen;
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-color: #3C3939;
+    font-size: 20px;
+  }
+    #btn1{
+    background-color: limegreen;
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-color: #3C3939;
+    font-size: 20px;
+  }
+    #btn2{
+    background-color: limegreen;
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-color: #3C3939;
+    font-size: 20px;
+  }
+    #btn3{
+    background-color: limegreen;
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-color: #3C3939;
+    font-size: 20px;
+  }
+    #btn4{
+    background-color: limegreen;
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-color: #3C3939;
+    font-size: 20px;
+  }
+    #btn5{
+    background-color: limegreen;
+    position: relative;
+    bottom: 100px;
+    left: 170px;
+    width: 150px;
+    height: 50px;
+    border-radius: 40px;
+    border-color: #3C3939;
+    font-size: 20px;
+  }
+  .custom-alert {
+  display: none; /* Hide by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* dark transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.alert-box {
+  background-color:  #3C3939 ;
+  padding: 20px 30px;
+  border-radius: 40px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color :antiquewhite;
+}
+#ok{
+  background-color: antiquewhite;
+  width: 100px;
+  height :30px;
+  border-color:transparent;
+  border-radius :10px;
+}
+</style>
+<script>
+  const alertBox = document.getElementById("customAlert");
+
+document.getElementById("btn").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+document.getElementById("btn1").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+document.getElementById("btn2").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+document.getElementById("btn3").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+document.getElementById("btn4").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+document.getElementById("btn5").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+
+function closeAlert() {
+  alertBox.style.display = "none"; // Hide the alert
+}
+</script>

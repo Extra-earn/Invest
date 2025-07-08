@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Investment Chat Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chatbox {
+      width: 400px;
+      height: 700px;
+      background: antiquewhite;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-header {
+      background: #3C3939;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 26px;
+      font-family: Georgia;
+      font-weight: 20px;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .message {
+      max-width: 75%;
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .user {
+      align-self: flex-end;
+      background: #3C3939;
+      color: white;
+      border-bottom-right-radius: 0;
+    }
+    .bot {
+      align-self: flex-start;
+      background: #e4e6eb;
+      border-bottom-left-radius: 0;
+    }
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    .chat-input input {
+      flex: 1;
+      border: none;
+      padding: 15px;
+      font-size: 14px;
+    }
+    .chat-input button {
+      background: #3C3939;
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="chatbox">
+  <div class="chat-header">CUSTOMER SERVICE</div>
+  <div class="chat-messages" id="chat"></div>
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Ask anything..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  const chat = document.getElementById("chat");
+
+  const knowledgeBase = [
+    {
+      keywords: ["welcome", "bonus"],
+      answer: "🎁 You receive a $2 welcome bonus when you register."
+    },
+         {
+      keywords: ["paying", "pays", "real cash"],
+      answer: " Yes this website pays and send your money to your account without waisting time."
+    },
+     {
+      keywords: ["thanks", "thank you", "i appreciate"],
+      answer: " You are welcome you can ask me any question about the website and i will assist you."
+    },
+    {
+      keywords: ["minimum", "investment"],
+      answer: "💵 The minimuim investment plan is $10."
+    },
+    {
+      keywords: ["maximum", "investment"],
+      answer: "💰 The maximum investment plan is $200."
+    },
+    {
+      keywords: ["minimum", "withdrawal"],
+      answer: "🏦 The minimum withdrawal amount is $10."
+    },
+    {
+      keywords: ["withdrawal", "charge", "fee"],
+      answer: "🔁 Withdrawal is charged at 4%."
+    },
+    {
+      keywords: ["plan", "investment", "product", "earn"],
+      answer:
+        "📈 Investment Plans:\n" +
+        "- $10 → $0.5/day for 40 days\n" +
+        "- $30 → $1/day for 60 days\n" +
+        "- $50 → $2/day for 60 days\n" +
+        "- $100 → $4/day for 60 days\n" +
+        "- $150 → $5/day for 60 days\n" +
+        "- $200 → $6/day for 60 days"
+    },
+    {
+      keywords: ["deposit", "put", "add", "fund"],
+      answer:
+        "💳 To deposit:\n1. Go to the homepage → click 'Deposit'.\n2. Choose amount → click 'Continue'.\n3. Select currency & copy wallet address.\n4. Make payment → click 'Done'.\n5. Enter name & amount for verification.\n6. Your deposit will be confirmed and approved."
+    },
+    {
+      keywords: ["withdraw", "cash out", "get money"],
+      answer:
+        "💸 To withdraw:\n1. Click 'Withdrawal' on your dashboard.\n2. Make sure you have at least $10.\n3. Enter your wallet/account info.\n4. Enter the amount and click 'Confirm'."
+    },
+    {
+      keywords: ["hello", "hi", "hey"],
+      answer: "👋 Hello! what can i help you with?"
+    }
+  ];
+
+  function sendMessage() {
+    const input = document.getElementById("userInput");
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, "user");
+    input.value = "";
+
+    const reply = findResponse(text) || "🤔 I'm not sure about that. Try asking about deposit, withdrawal, bonus, or plans.";
+    setTimeout(() => addMessage(reply, "bot"), 500);
+  }
+
+  function findResponse(userText) {
+    const cleaned = userText.toLowerCase();
+    for (let item of knowledgeBase) {
+      if (item.keywords.some(keyword => cleaned.includes(keyword))) {
+        return item.answer;
+      }
+    }
+    return null;
+  }
+
+  function addMessage(text, sender) {
+    const msg = document.createElement("div");
+    msg.className = `message ${sender}`;
+    msg.textContent = text;
+    chat.appendChild(msg);
+    chat.scrollTop = chat.scrollHeight;
+  }
+</script>
+
+</body>
+</html>

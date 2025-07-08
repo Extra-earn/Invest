@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+   <h1><img src="/Investment /20250619_181544.png"></h1>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+<label><input type="checkbox" id="remember-me" /> Remember me</label>
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+      <p id="message"></p>
+    </form>
+  </div>
+</body>
+</html>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: antiquewhite;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color:white ;
+  position: fixed;
+}
+
+.container {
+  background:  #3C3939;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 300px;
+}
+img{
+  width: 250px;
+  position: absolute;
+  bottom: 600px;
+  right: 70px;
+}
+h2{
+  text-align: center;
+  text-transform:uppercase ;
+  color: sandybrown;
+  font-size:30px;
+  font-family:Times New Roman;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 14px;
+  color: red;
+}
+</style>
+<script>
+const form = document.getElementById("login-form");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  const user = JSON.parse(localStorage.getItem(username));
+
+  if (!user || user.password !== password) {
+    message.textContent = "Invalid Password or Username";
+    return;
+  }
+
+  message.style.color = "green";
+  message.background.color ="blue"
+  message.textContent = "Login successful!";
+  // Example: you could redirect to a protected page
+  setTimeout(() => {
+    alert("Welcome " + user.username);
+  }, 1000);
+});
+const rememberMe = document.getElementById("remember-me");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const user = JSON.parse(localStorage.getItem(username));
+
+  if (!user || user.password !== password) {
+    message.textContent = "Invalid Password and username";
+    return;
+  }
+
+  message.style.color = "green";
+  message.textContent = "Login successful! Redirecting...";
+
+  // Store login status based on Remember Me
+  if (rememberMe.checked) {
+    localStorage.setItem("loggedInUser", username); // persists
+  } else {
+    sessionStorage.setItem("loggedInUser", username); // session only
+  }
+
+  setTimeout(() => {
+    window.location.href = "Dashboard2.html";
+  }, 1000);
+});
+</script>

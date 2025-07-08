@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <div class="text-container">
+    <div class="message">You have received a welcome bonus of 2.00 USDT </div>
+    <div class="message">Fletcher Davies received 40 USDT</div>
+    <div class="message">Julia Pearson received 30 USDT</div>
+  <div class="message">Adrian Chevalier received 15 USDT</div>
+    <div class="message">Isiah Underwood received 25 USDT</div>
+  </div>
+<body>
+  <div class="container">
+    <h1>Welcome, <span id="username-display"></span>!</h1>
+    <h2>Balance</h2>
+    <h3>2.00 USDT<button id="withdraw">Withdraw</button></h3>
+    <div class="custom-alert" id="customAlert">
+  <div class="alert-box">
+    <p>Minimum withdrawal is 10 USDT</p>
+    <button onclick="closeAlert()" id="ok">OK</button>
+  </div>
+</div>
+  </div>
+      <img src="/Investment /20250618_155352.jpg">
+</body>
+<div class="container" id="cont2">
+  <h5>Why Choose eXtra?</h5>
+  <h6>
+    Welcome to eXtra — where smart investing meets simplicity, transparency, and real results.eXtra is the smart, simple, and secure way to grow your money. Whether you're new to investing or experienced, our platform offers high-yield, fully vetted opportunities with transparent performance tracking and zero hidden fees.
+<ul>✔ Easy to use</ul>
+<ul>✔ Returns up to 12%+ daily</ul>
+<ul>✔ Start with as little as $10</ul>
+<ul>✔ Fully secure & trusted by thousands</ul>
+</h6>
+<h5 id="hh">What Makes eXtra Exceptional?</h5>
+<h6 id="hhh">
+<li><b>Reliable, High-Growth Investments:</b>
+Our team carefully vets every opportunity to ensure it meets our standards for performance and reliability. From real estate to tech startups, you’ll find investment options that deliver — often with annual returns of 12% or more.</li>
+
+<li><b>Built for All Levels:</b>
+No financial jargon. No hidden fees. Just clear, straightforward investing. Whether you’re starting with $100 or $10,000, eXtra gives you the tools and confidence to make informed decisions.</li>
+<li>Start investing with confidence — the eXtra way.</li>
+<li>Make sure to join our WhatsApp Channel for more information and updates </lo>
+</h6>
+</div>
+  
+<footer>
+     <a href="Dashboard2.html"><button id="btn1">Home</button></a>
+     <a href="deposit.html"><button id="btn2">Deposit</button></a>
+     <a href="product.html"><button id="btn3">Products</button></a>
+     <a href="others.html"><button id="btn4">Others</button></a>
+</footer>
+</html>
+<style>
+body{
+  background-color:antiquewhite;
+  margin-bottom: 0px;
+  margin-top: 2px;
+  margin-left: 8px;
+  margin-right: 6px;
+}
+b{
+  color :antiquewhite;
+  text-decoration: underline;
+}
+    .text-container {
+      position: relative;
+      width: 100%;
+      height: 1em;
+      overflow: hidden;
+      background:#3C3939 ;
+      font-size: 1rem;
+      font-style: italic;
+      color :white;
+      font-family: Georgia;
+    }
+
+    .message {
+      position: absolute;
+      white-space: nowrap;
+      animation: slideOnce 6s linear forwards;
+      opacity: 0;
+    }
+
+    .message:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .message:nth-child(2) {
+      animation-delay: 6s;
+    }
+
+    .message:nth-child(3) {
+      animation-delay: 12s;
+    }
+
+    .message:nth-child(4) {
+      animation-delay: 18s;
+    }
+    
+    .message:nth-child(5) {
+      animation-delay: 24s;
+    }
+    
+    @keyframes slideOnce {
+      0% {
+        left: -100%;
+        opacity: 1;
+      }
+      80% {
+        left: 100%;
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+.container{
+  background:  #3C3939;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 300px;
+  height:200px;
+  font-size: 14px;
+  margin: 0px;
+}
+h5{
+  font-size: 25px;
+  position: relative;
+  color: white;
+  bottom: 70px;
+  text-align :center;
+}
+h6{
+  font-size: 18px;
+  position: relative;
+  right: 10px;
+  color: #A89100;
+    bottom: 107px;
+    font-style: italic;
+}
+#cont2{
+  position: relative;
+  bottom: 40px;
+  height: 990px;
+}
+#btn1{
+  background-color:transparent;
+  position: relative;
+  left:0px;
+  bottom: 15px;
+  text-decoration: none;
+  border-radius:40px;
+  width: 80px;
+  border-color :antiquewhite;
+  color:  antiquewhite;
+}
+#btn2{
+  background-color:transparent;
+  position: relative;
+  left:9px;
+  bottom: 15px;
+  border-radius: 50px;
+  width: 80px;
+  border-color:antiquewhite;
+  color: antiquewhite;
+}
+#btn3{
+  background-color:transparent;
+  position: relative;
+  left:16px;
+  bottom: 15px;
+  border-radius:50px;
+  width: 80px;
+  border-color:antiquewhite;
+  color: antiquewhite;
+}
+#hh{
+  position: relative;
+  bottom: 120px;
+  text-align :left;
+}
+#hhh{
+  position: relative;
+  bottom: 140px;
+  font-style: italic;
+}
+#btn4{
+   background-color:transparent;
+  position: relative;
+  left:23px;
+  bottom: 15px;
+  border-radius:50px;
+  width: 80px;
+  border-color:antiquewhite;
+  color: antiquewhite;
+}
+h1{
+  font-family:Georgia;
+  color: white;
+}
+h2{
+  font-family:Times New Roman;
+  color:#A89100;
+  font-size: 20px;
+  height:20px;
+}
+h3{ font-family:Times New Roman;
+  color:#A89100;
+  font-size:40px;
+  
+}
+footer{
+  background-color:  #3C3939;
+  width: 350px;
+  height:60px;
+  padding: 30px;
+  margin: 0;
+  position: fixed ;
+  top: 700px;
+  right: 0px;
+  overflow: hidden;
+}
+button{
+  color: antiquewhite;
+  position: relative;
+  left: 210px;
+  background-color: transparent;
+  width: 110px;
+  height: 40px;
+  border-radius:50px;
+  border-color:antiquewhite;
+  bottom :50px;
+}
+img{
+  width:350px;
+  height:200px;
+  padding-top: 50px;
+  padding-bottom: px;
+  position: relative;
+  left: 4px;
+  bottom: 40px;
+}
+.custom-alert {
+  display: none; /* Hide by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* dark transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.alert-box {
+  background-color:  #3C3939 ;
+  padding: 20px 30px;
+  border-radius: 40px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  color : antiquewhite;
+}
+#ok{
+  background-color: antiquewhite;
+  width: 100px;
+  height: 30px;
+  border-color:transparent;
+  border-radius :10px;
+  color :black;
+  position:relative;
+  left: 0px;
+  bottom :8px;
+</style>
+<script>
+  const usernameDisplay = document.getElementById("username-display");
+const logoutBtn = document.getElementById("logout-btn");
+
+// Get the logged-in username from localStorage
+const loggedInUser = localStorage.getItem("loggedInUser");
+
+if (!loggedInUser) {
+  // If no user is logged in, redirect to login
+  window.location.href = "login.html";
+} else {
+  usernameDisplay.textContent = loggedInUser;
+}
+const alertBox = document.getElementById("customAlert");
+
+document.getElementById("withdraw").onclick = function () {
+  alertBox.style.display = "flex"; // Show the alert
+};
+
+function closeAlert() {
+  alertBox.style.display = "none"; // Hide the alert
+}
+</script>
