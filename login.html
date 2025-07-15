@@ -87,27 +87,6 @@ button:hover {
 <script>
 const form = document.getElementById("login-form");
 const message = document.getElementById("message");
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
-
-  const user = JSON.parse(localStorage.getItem(username));
-
-  if (!user || user.password !== password) {
-    message.textContent = "Invalid Password or Username";
-    return;
-  }
-
-  message.style.color = "green";
-  message.background.color ="blue"
-  message.textContent = "Login successful!";
-  // Example: you could redirect to a protected page
-  setTimeout(() => {
-    alert("Welcome " + user.username);
-  }, 1000);
-});
 const rememberMe = document.getElementById("remember-me");
 
 form.addEventListener("submit", function (e) {
@@ -117,19 +96,21 @@ form.addEventListener("submit", function (e) {
   const user = JSON.parse(localStorage.getItem(username));
 
   if (!user || user.password !== password) {
-    message.textContent = "Invalid Password and username";
+    message.textContent = "Invalid Password or Username";
+    message.style.color = "red";
     return;
+  }
+
+  if (!rememberMe.checked) {
+    message.textContent = "Please check 'Remember Me' to proceed.";
+    message.style.color = "orange";
+    return;  // Stop the process until they check Remember Me
   }
 
   message.style.color = "green";
   message.textContent = "Login successful! Redirecting...";
 
-  // Store login status based on Remember Me
-  if (rememberMe.checked) {
-    localStorage.setItem("loggedInUser", username); // persists
-  } else {
-    sessionStorage.setItem("loggedInUser", username); // session only
-  }
+  localStorage.setItem("loggedInUser", username);
 
   setTimeout(() => {
     window.location.href = "Dashboard2.html";
